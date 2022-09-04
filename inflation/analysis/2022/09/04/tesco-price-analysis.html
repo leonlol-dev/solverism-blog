@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      9 min read
     
 </span></p>
 
@@ -852,7 +852,19 @@ window.onload = wrap_img;
 <p></p>
 <div class="flash flash-success">
     <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
-    <strong>Tip: </strong>This chart is interactive! Hover your mouse over the sector to look at the index number of categories (if on mobile, tap and hold the name of the category). Clicking on a sector will focus on that particular category and its subcategory. There’s 4 levels of categories but only 3 levels are shown at any one time.
+    <strong>Tip: </strong>This chart is interactive! Hover your mouse over the sector to look at the index number of categories (if on mobile, tap and hold the name of the category). Clicking on a sector will focus on that particular category and its subcategory. There’s 4 levels of categories but only 3 levels are shown at any one time for better performance.
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash flash-error">
+    <svg class="octicon octicon-alert" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
+    <strong>Warning: </strong>The index numbers presented in the graph are accurate when rounding to whole numbers. The numbers get more inaccurate as you go up category granularities due to the way that the index numbers are aggregated. I’m using the most granular dataset that contains index numbers of quaternary categories, these are then aggregated up to the tertiary category level using the harmonic mean weighted by the basket value of the quarternary categories within the tertiary category. This process repeats for the secondary and then the primary categories, the approximation error increasing going up with each category level.
 </div>
 
 </div>
@@ -907,54 +919,11 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Straight away we can see that fresh food and frozen food have increased by 3.2% and 4.7% respectively. The major contributing subcategories for fresh food are cheese (4.7% increase); fresh meat and poultry (5.4% increase); cooked meats, antipasti, and dips (5.9% increase); and yogurts (3.7% increase). For frozen food, the major contributing subcategories are frozen fish and seafood (8.6% increase); frozen chips, onion rings, potatoes, and rice (11.8% increase); and frozen meat and poultry (5.6% increase). Yikes, no wonder why my shopping bill has been going up.</p>
-<p>Across the board there's been an increase in price for the basket of products in categories. Looking at secondary categories</p>
+<p>Straight away we can see that fresh food and frozen food have increased by ~3% and ~4% respectively. The major contributing subcategories for fresh food are cheese (~5% increase); fresh meat and poultry (~5% increase); ready meals (~4% increase); and yogurts (~4% increase). For frozen food, the major contributing subcategories are frozen fish and seafood (~9% increase); frozen chips, onion rings, potatoes, and rice (~12% increase); and frozen meat and poultry (~5% increase). Yikes, no wonder why my shopping bill has been going up.</p>
 
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">overall_df</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">cat_index_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">'category_</span><span class="si">{</span><span class="n">cat_idx</span><span class="si">}</span><span class="s1">'</span><span class="p">]</span>
-    <span class="p">[</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">'category_</span><span class="si">{</span><span class="n">cat_idx</span><span class="si">}</span><span class="s1">'</span><span class="p">][</span><span class="s1">'date'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'2022-02-28'</span><span class="p">,</span><span class="s1">'2022-06-13'</span><span class="p">])]</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'date'</span><span class="p">])</span>
-    <span class="p">[</span><span class="s1">'total_basket_value'</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="p">)</span>
-<span class="n">overall_index</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">overall_df</span><span class="p">[</span><span class="s1">'total_basket_value'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">overall_df</span><span class="p">[</span><span class="s1">'total_basket_value'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">overall_index</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>101.70219405149523</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -967,57 +936,6 @@ if (outputEl) {{
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'category_1'</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">'legend'</span><span class="p">)</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_1'</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Index'</span><span class="p">)),</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Week Commencing Monday'</span><span class="p">)),</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'category_1'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Food Category"</span><span class="p">)),</span>
-    <span class="n">strokeDash</span><span class="o">=</span><span class="s1">'category_1'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">'Index of Main Tesco Food Categories'</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
-<span class="p">)</span>
-
-<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
-    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">on</span><span class="o">=</span><span class="s2">"mouseover"</span><span class="p">,</span>
-    <span class="n">empty</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
-    <span class="n">clear</span><span class="o">=</span><span class="s2">"mouseout"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">tooltips</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_1'</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">transform_pivot</span><span class="p">(</span>
-    <span class="s2">"category_1"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'date:T'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"date:T"</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat_1</span><span class="si">}</span><span class="s2">:Q"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'.2f'</span><span class="p">)</span> <span class="k">for</span> <span class="n">cat_1</span> <span class="ow">in</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_1'</span><span class="p">][</span><span class="s1">'category_1'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
-
-
-<span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">tooltips</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">17</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
-<span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
-<span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span>
-<span class="p">)</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1103,60 +1021,6 @@ if (outputEl) {{
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primary_cat</span> <span class="o">=</span> <span class="s1">'fresh-food'</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="s1">'category_1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">primary_cat</span>
-
-<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">'legend'</span><span class="p">)</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Index'</span><span class="p">)),</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Week Commencing Monday'</span><span class="p">)),</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'category_2'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">)),</span>
-    <span class="n">strokeDash</span><span class="o">=</span><span class="s1">'category_2'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Index of Tesco Food Subcategories for </span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Category"</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
-<span class="p">)</span>
-
-<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
-    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">on</span><span class="o">=</span><span class="s2">"mouseover"</span><span class="p">,</span>
-    <span class="n">empty</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
-    <span class="n">clear</span><span class="o">=</span><span class="s2">"mouseout"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">tooltips</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">transform_pivot</span><span class="p">(</span>
-    <span class="s2">"category_2"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'date:T'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"date:T"</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat_1</span><span class="si">}</span><span class="s2">:Q"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'.2f'</span><span class="p">)</span> <span class="k">for</span> <span class="n">cat_1</span> <span class="ow">in</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">][</span><span class="s1">'category_2'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
-
-
-<span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">tooltips</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">17</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
-<span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
-<span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span>
-<span class="p">)</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1233,61 +1097,6 @@ if (outputEl) {{
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primary_cat</span> <span class="o">=</span> <span class="s1">'fresh-food'</span>
-<span class="n">subcat_1</span> <span class="o">=</span> <span class="s1">'fresh-meat-and-poultry'</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="s1">'category_1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">primary_cat</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="s1">'category_2'</span><span class="p">]</span> <span class="o">==</span> <span class="n">subcat_1</span><span class="p">)</span>
-
-<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">'legend'</span><span class="p">)</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Index'</span><span class="p">)),</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Week Commencing Monday'</span><span class="p">)),</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'category_3'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subcat_1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">)),</span>
-    <span class="n">strokeDash</span><span class="o">=</span><span class="s1">'category_3'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Index of Tesco Food Subcategories for </span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subcat_1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
-<span class="p">)</span>
-
-<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
-    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">on</span><span class="o">=</span><span class="s2">"mouseover"</span><span class="p">,</span>
-    <span class="n">empty</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
-    <span class="n">clear</span><span class="o">=</span><span class="s2">"mouseout"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">tooltips</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">transform_pivot</span><span class="p">(</span>
-    <span class="s2">"category_3"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'date:T'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"date:T"</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat_1</span><span class="si">}</span><span class="s2">:Q"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'.2f'</span><span class="p">)</span> <span class="k">for</span> <span class="n">cat_1</span> <span class="ow">in</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="n">mask</span><span class="p">][</span><span class="s1">'category_3'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
-
-
-<span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">tooltips</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">17</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
-<span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
-<span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span>
-<span class="p">)</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1364,61 +1173,6 @@ if (outputEl) {{
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primary_cat</span> <span class="o">=</span> <span class="s1">'fresh-food'</span>
-<span class="n">subcat_1</span> <span class="o">=</span> <span class="s1">'cheese'</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="s1">'category_1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">primary_cat</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="s1">'category_2'</span><span class="p">]</span> <span class="o">==</span> <span class="n">subcat_1</span><span class="p">)</span>
-
-<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">'legend'</span><span class="p">)</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Index'</span><span class="p">)),</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Week Commencing Monday'</span><span class="p">)),</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'category_3'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subcat_1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">)),</span>
-    <span class="n">strokeDash</span><span class="o">=</span><span class="s1">'category_3'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Index of Tesco Food Subcategories for </span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subcat_1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
-<span class="p">)</span>
-
-<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
-    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">on</span><span class="o">=</span><span class="s2">"mouseover"</span><span class="p">,</span>
-    <span class="n">empty</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
-    <span class="n">clear</span><span class="o">=</span><span class="s2">"mouseout"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">tooltips</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">transform_pivot</span><span class="p">(</span>
-    <span class="s2">"category_3"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'date:T'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"date:T"</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat_1</span><span class="si">}</span><span class="s2">:Q"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'.2f'</span><span class="p">)</span> <span class="k">for</span> <span class="n">cat_1</span> <span class="ow">in</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="n">mask</span><span class="p">][</span><span class="s1">'category_3'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
-
-
-<span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">tooltips</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">17</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
-<span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
-<span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span>
-<span class="p">)</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1495,61 +1249,6 @@ if (outputEl) {{
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primary_cat</span> <span class="o">=</span> <span class="s1">'fresh-food'</span>
-<span class="n">subcat_1</span> <span class="o">=</span> <span class="s1">'fresh-fruit'</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="s1">'category_1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">primary_cat</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="s1">'category_2'</span><span class="p">]</span> <span class="o">==</span> <span class="n">subcat_1</span><span class="p">)</span>
-
-<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">'legend'</span><span class="p">)</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Index'</span><span class="p">)),</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Week Commencing Monday'</span><span class="p">)),</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'category_3'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">)),</span>
-    <span class="n">strokeDash</span><span class="o">=</span><span class="s1">'category_3'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Index of Tesco Food Subcategories for </span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subcat_1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
-<span class="p">)</span>
-
-<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
-    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">on</span><span class="o">=</span><span class="s2">"mouseover"</span><span class="p">,</span>
-    <span class="n">empty</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
-    <span class="n">clear</span><span class="o">=</span><span class="s2">"mouseout"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">tooltips</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">transform_pivot</span><span class="p">(</span>
-    <span class="s2">"category_3"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'date:T'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"date:T"</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat_1</span><span class="si">}</span><span class="s2">:Q"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'.2f'</span><span class="p">)</span> <span class="k">for</span> <span class="n">cat_1</span> <span class="ow">in</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_3'</span><span class="p">][</span><span class="n">mask</span><span class="p">][</span><span class="s1">'category_3'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
-
-
-<span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">tooltips</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">17</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
-<span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
-<span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span>
-<span class="p">)</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1635,60 +1334,6 @@ if (outputEl) {{
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primary_cat</span> <span class="o">=</span> <span class="s1">'frozen-food'</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="s1">'category_1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">primary_cat</span>
-
-<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">'legend'</span><span class="p">)</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Index'</span><span class="p">)),</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Week Commencing Monday'</span><span class="p">)),</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'category_2'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">)),</span>
-    <span class="n">strokeDash</span><span class="o">=</span><span class="s1">'category_2'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Index of Tesco Food Subcategories for </span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Category"</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
-<span class="p">)</span>
-
-<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
-    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">on</span><span class="o">=</span><span class="s2">"mouseover"</span><span class="p">,</span>
-    <span class="n">empty</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
-    <span class="n">clear</span><span class="o">=</span><span class="s2">"mouseout"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">tooltips</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">transform_pivot</span><span class="p">(</span>
-    <span class="s2">"category_2"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'date:T'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"date:T"</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat_1</span><span class="si">}</span><span class="s2">:Q"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'.2f'</span><span class="p">)</span> <span class="k">for</span> <span class="n">cat_1</span> <span class="ow">in</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">][</span><span class="s1">'category_2'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
-
-
-<span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">tooltips</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">17</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
-<span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
-<span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span>
-<span class="p">)</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1774,60 +1419,6 @@ if (outputEl) {{
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primary_cat</span> <span class="o">=</span> <span class="s1">'food-cupboard'</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="s1">'category_1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">primary_cat</span>
-
-<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">'legend'</span><span class="p">)</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Index'</span><span class="p">)),</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Week Commencing Monday'</span><span class="p">)),</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'category_2'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">)),</span>
-    <span class="n">strokeDash</span><span class="o">=</span><span class="s1">'category_2'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Index of Tesco Food Subcategories for </span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Category"</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
-<span class="p">)</span>
-
-<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
-    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">on</span><span class="o">=</span><span class="s2">"mouseover"</span><span class="p">,</span>
-    <span class="n">empty</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
-    <span class="n">clear</span><span class="o">=</span><span class="s2">"mouseout"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">tooltips</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">transform_pivot</span><span class="p">(</span>
-    <span class="s2">"category_2"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'date:T'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"date:T"</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat_1</span><span class="si">}</span><span class="s2">:Q"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'.2f'</span><span class="p">)</span> <span class="k">for</span> <span class="n">cat_1</span> <span class="ow">in</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">][</span><span class="s1">'category_2'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
-
-
-<span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">tooltips</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">17</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
-<span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
-<span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span>
-<span class="p">)</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1913,60 +1504,6 @@ if (outputEl) {{
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primary_cat</span> <span class="o">=</span> <span class="s1">'drinks'</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="s1">'category_1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">primary_cat</span>
-
-<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">'legend'</span><span class="p">)</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Index'</span><span class="p">)),</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Week Commencing Monday'</span><span class="p">)),</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'category_2'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">)),</span>
-    <span class="n">strokeDash</span><span class="o">=</span><span class="s1">'category_2'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Index of Tesco Food Subcategories for </span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Category"</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
-<span class="p">)</span>
-
-<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
-    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">on</span><span class="o">=</span><span class="s2">"mouseover"</span><span class="p">,</span>
-    <span class="n">empty</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
-    <span class="n">clear</span><span class="o">=</span><span class="s2">"mouseout"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">tooltips</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">transform_pivot</span><span class="p">(</span>
-    <span class="s2">"category_2"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'date:T'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"date:T"</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat_1</span><span class="si">}</span><span class="s2">:Q"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'.2f'</span><span class="p">)</span> <span class="k">for</span> <span class="n">cat_1</span> <span class="ow">in</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">][</span><span class="s1">'category_2'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
-
-
-<span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">tooltips</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">17</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
-<span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
-<span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span>
-<span class="p">)</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -1983,60 +1520,6 @@ if (outputEl) {{
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primary_cat</span> <span class="o">=</span> <span class="s1">'bakery'</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="s1">'category_1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">primary_cat</span>
-
-<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">'legend'</span><span class="p">)</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Index'</span><span class="p">)),</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">shorthand</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Week Commencing Monday'</span><span class="p">)),</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'category_2'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Subcategory"</span><span class="p">)),</span>
-    <span class="n">strokeDash</span><span class="o">=</span><span class="s1">'category_2'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
-    <span class="n">selection</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Index of Tesco Food Subcategories for </span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">primary_cat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Category"</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
-<span class="p">)</span>
-
-<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
-    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
-    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">on</span><span class="o">=</span><span class="s2">"mouseover"</span><span class="p">,</span>
-    <span class="n">empty</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
-    <span class="n">clear</span><span class="o">=</span><span class="s2">"mouseout"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">tooltips</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span><span class="o">.</span><span class="n">transform_pivot</span><span class="p">(</span>
-    <span class="s2">"category_2"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"grey"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'date:T'</span><span class="p">,</span>
-    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"date:T"</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat_1</span><span class="si">}</span><span class="s2">:Q"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'.2f'</span><span class="p">)</span> <span class="k">for</span> <span class="n">cat_1</span> <span class="ow">in</span> <span class="n">cat_index_dict</span><span class="p">[</span><span class="s1">'category_2'</span><span class="p">][</span><span class="n">mask</span><span class="p">][</span><span class="s1">'category_2'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
-
-
-<span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">tooltips</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">17</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
-<span class="n">titleFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
-<span class="n">labelFontSize</span><span class="o">=</span><span class="mi">13</span>
-<span class="p">)</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
