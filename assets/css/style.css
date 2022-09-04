@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Raleway|Quicksand|Arvo|ChunkFive|Chivo");
 .highlight .c { color: #998; font-style: italic; }
 
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
@@ -180,9 +181,9 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .highlighter-rouge .highlight { background: #eeeeff; }
 
 /** Wrapper */
-.wrapper { max-width: calc(1000px - (30px)); margin-right: auto; margin-left: auto; padding-right: 15px; padding-left: 15px; }
+.wrapper { max-width: calc(1250px - (30px)); margin-right: auto; margin-left: auto; padding-right: 15px; padding-left: 15px; }
 
-@media screen and (min-width: 1200px) { .wrapper { max-width: calc(1000px - (30px * 2)); padding-right: 30px; padding-left: 30px; } }
+@media screen and (min-width: 1400px) { .wrapper { max-width: calc(1250px - (30px * 2)); padding-right: 30px; padding-left: 30px; } }
 
 /** Clearfix */
 .wrapper:after { content: ""; display: table; clear: both; }
@@ -205,7 +206,7 @@ table th { background-color: #f0f0f0; border: 1px solid #e0e0e0; }
 
 table td { border: 1px solid #e8e8e8; }
 
-@media screen and (max-width: 1000px) { table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; -ms-overflow-style: -ms-autohiding-scrollbar; } }
+@media screen and (max-width: 1250px) { table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; -ms-overflow-style: -ms-autohiding-scrollbar; } }
 
 /** Site header */
 .site-header { border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 55.95px; line-height: 54px; position: relative; }
@@ -234,7 +235,7 @@ table td { border: 1px solid #e8e8e8; }
 
 .site-nav .page-link:not(:last-child) { margin-right: 0; }
 
-@media screen and (min-width: 1000px) { .site-nav { position: static; float: right; border: none; background-color: inherit; } .site-nav label[for="nav-trigger"] { display: none; } .site-nav .menu-icon { display: none; } .site-nav input ~ .trigger { display: block; } .site-nav .page-link { display: inline; padding: 0; margin-left: auto; } .site-nav .page-link:not(:last-child) { margin-right: 20px; } }
+@media screen and (min-width: 1250px) { .site-nav { position: static; float: right; border: none; background-color: inherit; } .site-nav label[for="nav-trigger"] { display: none; } .site-nav .menu-icon { display: none; } .site-nav input ~ .trigger { display: block; } .site-nav .page-link { display: inline; padding: 0; margin-left: auto; } .site-nav .page-link:not(:last-child) { margin-right: 20px; } }
 
 /** Site footer */
 .site-footer { border-top: 1px solid #e8e8e8; padding: 30px 0; }
@@ -253,9 +254,9 @@ table td { border: 1px solid #e8e8e8; }
 
 .footer-col-3 { width: calc(100% - (30px / 2)); }
 
-@media screen and (min-width: 1200px) { .footer-col-1 { width: calc(35% - (30px / 2)); } .footer-col-2 { width: calc(20% - (30px / 2)); } .footer-col-3 { width: calc(45% - (30px / 2)); } }
+@media screen and (min-width: 1400px) { .footer-col-1 { width: calc(35% - (30px / 2)); } .footer-col-2 { width: calc(20% - (30px / 2)); } .footer-col-3 { width: calc(45% - (30px / 2)); } }
 
-@media screen and (min-width: 1000px) { .footer-col-wrapper { display: flex; } .footer-col { width: calc(100% - (30px / 2)); padding: 0 15px; } .footer-col:first-child { padding-right: 15px; padding-left: 0; } .footer-col:last-child { padding-right: 0; padding-left: 15px; } }
+@media screen and (min-width: 1250px) { .footer-col-wrapper { display: flex; } .footer-col { width: calc(100% - (30px / 2)); padding: 0 15px; } .footer-col:first-child { padding-right: 15px; padding-left: 0; } .footer-col:last-child { padding-right: 0; padding-left: 15px; } }
 
 /** Page content */
 .page-content { padding: 30px 0; flex: 1 0 auto; }
@@ -277,7 +278,7 @@ table td { border: 1px solid #e8e8e8; }
 
 .post-title, .post-content h1 { font-size: 2.625rem; letter-spacing: -1px; line-height: 1.15; }
 
-@media screen and (min-width: 1200px) { .post-title, .post-content h1 { font-size: 2.625rem; } }
+@media screen and (min-width: 1400px) { .post-title, .post-content h1 { font-size: 2.625rem; } }
 
 .post-content { margin-bottom: 30px; }
 
@@ -285,11 +286,11 @@ table td { border: 1px solid #e8e8e8; }
 
 .post-content h2 { font-size: 1.75rem; }
 
-@media screen and (min-width: 1200px) { .post-content h2 { font-size: 2rem; } }
+@media screen and (min-width: 1400px) { .post-content h2 { font-size: 2rem; } }
 
 .post-content h3 { font-size: 1.375rem; }
 
-@media screen and (min-width: 1200px) { .post-content h3 { font-size: 1.625rem; } }
+@media screen and (min-width: 1400px) { .post-content h3 { font-size: 1.625rem; } }
 
 .post-content h4 { font-size: 1.25rem; }
 
@@ -317,7 +318,7 @@ table td { border: 1px solid #e8e8e8; }
 .pagination li div.pager-edge { color: #e8e8e8; border: 1px dashed; }
 
 /** Grid helpers */
-@media screen and (min-width: 1200px) { .one-half { width: calc(50% - (30px / 2)); } }
+@media screen and (min-width: 1400px) { .one-half { width: calc(50% - (30px / 2)); } }
 
 /*-----------------------------------*/
 /*--- IMPORT STYLES FOR FASTPAGES ---*/
@@ -427,59 +428,44 @@ pre code { font-size: 15px !important; }
 
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
-.language-python + .language-plaintext { border-left: 1px solid grey; margin-left: 1rem !important; }
+/* include Google Web fonts: */
+.navbar { background-color: #11436e; font-size: 1rem; font-weight: 800; font-family: 'Arvo', 'ChunkFive', 'Chivo', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, serif; }
 
-[class^="language-"]:not(.language-plaintext) pre, [class^="language-"]:not(.language-plaintext) code { background-color: #323443 !important; color: #f8f8f2; }
+.navbar a { color: #ffffff !important; }
 
-.language-python + .language-plaintext code { background-color: white !important; }
+.navbar-toggler { font-size: 12px !important; padding: 13px !important; color: #11436e !important; background-color: #a7cef1 !important; }
 
-.language-python + .language-plaintext pre { background-color: white !important; }
+.my-brand { margin-left: 0.25rem; line-height: 1.8; font-size: 1.4rem; }
 
-.input_area pre, .input_area div { margin-bottom: 1.0rem !important; margin-top: 1.5rem !important; padding-bottom: 0 !important; padding-top: 0 !important; background: #323443 !important; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: Menlo, Monaco, Consolas, "Lucida Console", Roboto, Ubuntu, monospace; border-radius: 5px; font-size: 105%; }
+a { color: #1e73be !important; }
 
-.output_area pre, .output_area div { margin-bottom: 1rem !important; margin-top: 0rem !important; padding-bottom: 0 !important; padding-top: 0 !important; }
+a:hover, a:active { color: #ff7f00 !important; text-decoration: none !important; }
 
-.input_area pre { border-left: 1px solid lightcoral; }
+h1, h2, h3, h4, h5, h6 { font-weight: 600; font-family: 'Arvo', 'ChunkFive', 'Chivo', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, serif; }
 
-.output_area pre { border-left: 1px solid grey; margin-left: 1rem !important; font-size: 16px; }
+body { background-color: #f2f2f2 !important; font-size: 1rem !important; font-family: 'Lato', 'Raleway', 'Quicksand', 'Lora', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans serif !important; }
 
-.code_cell table { width: auto; }
+.page-content { padding-top: 4rem; font-family: 'Lato', 'Raleway', 'Quicksand', 'Lora', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans serif !important; }
 
-/* Dracula Theme v1.2.5 https://github.com/zenorocha/dracula-theme Copyright 2016, All rights reserved Code licensed under the MIT license */
-.highlight { background: #323443 !important; color: #f8f8f2 !important; }
+.post, .search { padding-top: 1.5rem; }
 
-.highlight pre, .highlight code { background: #323443; color: #f8f8f2; font-size: 110%; }
+.search-results-list-item .search-result-title { color: #1e73be; }
 
-.highlight .hll, .highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss { color: #e7997a; }
+.search-results-list-item a:hover .search-result-title, .search-results-list-item a:active .search-result-title { color: #ff7f00; text-decoration: none; }
 
-.highlight .go { color: #44475a; }
+.post-content p, .post-content li { font-size: 1.2rem; }
 
-.highlight .err, .highlight .g, .highlight .l, .highlight .n, .highlight .x, .highlight .ge, .highlight .gr, .highlight .gh, .highlight .gi, .highlight .gp, .highlight .gs, .highlight .gu, .highlight .gt, .highlight .ld, .highlight .no, .highlight .nd, .highlight .pi, .highlight .ni, .highlight .ne, .highlight .nn, .highlight .nx, .highlight .py, .highlight .w, .highlight .bp { color: #f8f8f2; background-color: #323443 !important; }
+.post-content li { padding-bottom: 1rem; }
 
-.highlight .p { font-weight: bold; color: #66d9ef; }
+.site-footer { color: #8c8c8c; background-color: #030d16; text-transform: uppercase; font-size: 0.8rem !important; padding: 40px 0; }
 
-.highlight .ge { text-decoration: underline; }
+.site-footer a { color: #f2f2f2 !important; }
 
-.highlight .bp { font-style: italic; }
+.site-footer a:hover, .site-footer a:active { text-decoration: underline !important; }
 
-.highlight .c, .highlight .ch, .highlight .cm, .highlight .cpf, .highlight .cs { color: #6272a4; }
+.fa-heart, .fa-coffee { color: #f2f2f2; }
 
-.highlight .c1 { color: gray; }
-
-.highlight .kd, .highlight .kt, .highlight .nb, .highlight .nl, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm { color: #8be9fd; }
-
-.highlight .kd, .highlight .nb, .highlight .nl, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm { font-style: italic; }
-
-.highlight .fm, .highlight .na, .highlight .nc, .highlight .nf { color: #ace591; }
-
-.highlight .k, .highlight .o, .highlight .cp, .highlight .kc, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .nt, .highlight .ow { color: #ff79c6; }
-
-.highlight .kc { color: #ace591; }
-
-.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il { color: #bd93f9; }
-
-.highlight .gd { color: #ff5555; }
-
-p code { font-size: 19px; }
+/* customize font size for code areas */
+.input_area pre, .input_area div, .output_area pre, .output_area div { font-size: 1rem; }
 
 /*# sourceMappingURL=style.css.map */
