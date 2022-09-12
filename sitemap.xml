@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://www.solverism.com/blog/markdown/2020/01/14/test-markdown-post.html</loc>
+<loc>https://www.solverism.com/markdown/2020/01/14/test-markdown-post.html</loc>
 <lastmod>2020-01-14T00:00:00-06:00</lastmod>
 </url>
 <url>
-<loc>https://www.solverism.com/blog/jupyter/2020/02/20/test.html</loc>
+<loc>https://www.solverism.com/jupyter/2020/02/20/test.html</loc>
 <lastmod>2020-02-20T00:00:00-06:00</lastmod>
 </url>
 <url>
-<loc>https://www.solverism.com/blog/inflation/analysis/2022/09/04/tesco-price-analysis.html</loc>
+<loc>https://www.solverism.com/inflation/analysis/2022/09/04/tesco-price-analysis.html</loc>
 <lastmod>2022-09-04T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://www.solverism.com/blog/about/</loc>
+<loc>https://www.solverism.com/about/</loc>
 </url>
 <url>
-<loc>https://www.solverism.com/blog/</loc>
+<loc>https://www.solverism.com/</loc>
 </url>
 <url>
-<loc>https://www.solverism.com/blog/search/</loc>
+<loc>https://www.solverism.com/search/</loc>
 </url>
 <url>
-<loc>https://www.solverism.com/blog/categories/</loc>
+<loc>https://www.solverism.com/categories/</loc>
 </url>
 </urlset>

@@ -1,1 +1,1 @@
-Sitemap: https://www.solverism.com/blog/sitemap.xml
+Sitemap: https://www.solverism.com/sitemap.xml
