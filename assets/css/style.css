@@ -429,34 +429,6 @@ pre code { font-size: 15px !important; }
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 /* include Google Web fonts: */
-a { color: #1e73be !important; }
-
-a:hover, a:active { color: #ff7f00 !important; text-decoration: none !important; }
-
-h1, h2, h3, h4, h5, h6 { font-weight: 600; font-family: 'Arvo', 'ChunkFive', 'Chivo', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, serif; }
-
-body { background-color: #f2f2f2 !important; font-size: 1rem !important; font-family: 'Lato', 'Raleway', 'Quicksand', 'Lora', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans serif !important; }
-
-.page-content { padding-top: 1rem; font-family: 'Lato', 'Raleway', 'Quicksand', 'Lora', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans serif !important; }
-
-.post, .search { padding-top: 1.5rem; }
-
-.search-results-list-item .search-result-title { color: #1e73be; }
-
-.search-results-list-item a:hover .search-result-title, .search-results-list-item a:active .search-result-title { color: #ff7f00; text-decoration: none; }
-
-.post-content p, .post-content li { font-size: 1.2rem; }
-
-.post-content li { padding-bottom: 1rem; }
-
-.site-footer { color: #8c8c8c; background-color: #030d16; text-transform: uppercase; font-size: 0.8rem !important; padding: 40px 0; }
-
-.site-footer a { color: #f2f2f2 !important; }
-
-.site-footer a:hover, .site-footer a:active { text-decoration: underline !important; }
-
-.fa-heart, .fa-coffee { color: #f2f2f2; }
-
 /* customize font size for code areas */
 .input_area pre, .input_area div, .output_area pre, .output_area div { font-size: 1rem; }
 
