@@ -429,14 +429,6 @@ pre code { font-size: 15px !important; }
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 /* include Google Web fonts: */
-.navbar { background-color: #11436e; font-size: 1rem; font-weight: 800; font-family: 'Arvo', 'ChunkFive', 'Chivo', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, serif; }
-
-.navbar a { color: #ffffff !important; }
-
-.navbar-toggler { font-size: 12px !important; padding: 13px !important; color: #11436e !important; background-color: #a7cef1 !important; }
-
-.my-brand { margin-left: 0.25rem; line-height: 1.8; font-size: 1.4rem; }
-
 a { color: #1e73be !important; }
 
 a:hover, a:active { color: #ff7f00 !important; text-decoration: none !important; }
@@ -445,7 +437,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; font-family: 'Arvo', 'ChunkFive', 'Ch
 
 body { background-color: #f2f2f2 !important; font-size: 1rem !important; font-family: 'Lato', 'Raleway', 'Quicksand', 'Lora', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans serif !important; }
 
-.page-content { padding-top: 4rem; font-family: 'Lato', 'Raleway', 'Quicksand', 'Lora', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans serif !important; }
+.page-content { padding-top: 1rem; font-family: 'Lato', 'Raleway', 'Quicksand', 'Lora', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans serif !important; }
 
 .post, .search { padding-top: 1.5rem; }
 
