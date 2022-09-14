@@ -8,14 +8,9 @@
 /* include Google Web fonts: */
 @import url('https://fonts.googleapis.com/css?family=Lato|Raleway|Quicksand|Arvo|ChunkFive|Chivo');
 
-h4 {
-  margin-top:0.2rem !important;
-  margin-bottom:0.1rem !important;  
+.post-content p, .post-content li {
+  font-size: 0.875rem;
 }
-
-// .post-content p, .post-content li {
-//   font-size: 1.2rem;
-// }
 
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
 // @import "minima/fastpages-dracula-highlight";
