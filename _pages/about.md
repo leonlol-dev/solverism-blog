@@ -8,7 +8,7 @@ permalink: /about/
 
 - [Github](https://github.com/Blee1077/)
 - [LinkedIn](https://www.linkedin.com/in/blee1077)
-- [CV, Apr 2022]({{ site.baseurl }}/docs/2022_04_30_Brandon_Lee_CV.pdf)
+- [CV, Apr 2022]({{ site.baseurl }}/docs/20220914_Brandon_Lee_CV_Public.pdf)
 
 ## Bio
 
@@ -18,4 +18,4 @@ I'm a huge believer of being a life time learner where the learning doesn't stop
 
 When I'm not trying to preach my life philsophy to strangers online, I'm usually building, tinkering with, or thinking of new ideas for data science projects in my free time. These usually start with a small idea but can somehow grow to multiple fully-fledged projects. More often than not, they come about because I want to put some new skills or concepts I've learned on client projects into practice. Outside of data science, I'm also pretty passionate about physical fitness.
 
-Hopefully you'll learn a thing or two from visiting my blog, enjoy your stay and feel free to send me a message!
+Hopefully you'll learn a thing or two from visiting my blog, enjoy your stay and feel free to connect on LinkedIn or send me a message!
