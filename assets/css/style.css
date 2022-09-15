@@ -429,7 +429,7 @@ pre code { font-size: 15px !important; }
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 /* include Google Web fonts: */
-.post-content p, .post-content li { font-size: 16px; color: #515151; }
+.post-content p, .post-content li { font-size: 18px; color: #515151; }
 
 /* customize font size for code areas */
 .input_area pre, .input_area div, .output_area pre, .output_area div { font-size: 1rem; }
