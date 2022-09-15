@@ -4,7 +4,7 @@
       {%- assign default_paths = site.pages | map: "path" -%}
       {%- assign page_paths = site.header_pages | default: default_paths -%}
       {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-      <img src="images/mstile-150x150.png" style="float: left;height: 40px;margin-top: 12px;">
+      <img src="images/mstile-150x150.png" style="float: left;height: 55px;margin-top: 10px;">
       <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
   
       {%- if titles_size > 0 -%}
@@ -30,11 +30,3 @@
       {%- endif -%}
     </div>
   </header>
-  Footer
-  © 2022 GitHub, Inc.
-  Footer navigation
-  Terms
-  Privacy
-  Security
-  Status
-  
