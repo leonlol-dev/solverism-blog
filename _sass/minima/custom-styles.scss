@@ -8,8 +8,9 @@
 /* include Google Web fonts: */
 @import url('https://fonts.googleapis.com/css?family=Lato|Raleway|Quicksand|Arvo|ChunkFive|Chivo');
 
+// make non-headings slightly smaller
 .post-content p, .post-content li {
-  font-size: 16px;
+  font-size: 10px;
   color: #515151;
 }
 
