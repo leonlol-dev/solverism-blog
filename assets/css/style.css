@@ -429,11 +429,7 @@ pre code { font-size: 15px !important; }
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 /* include Google Web fonts: */
-.post-content p, .post-content li { font-size: 14px; color: #515151; }
-
-h1, h2, h3, h4 { font-weight: normal !important; margin-bottom: 0.5rem !important; }
-
-h1 code, h2 code, h3 code, h4 code { font-size: 80%; }
+.post-content p, .post-content li { font-size: 16px; color: #515151; }
 
 /* customize font size for code areas */
 .input_area pre, .input_area div, .output_area pre, .output_area div { font-size: 1rem; }
