@@ -10,8 +10,17 @@
 
 // make non-headings slightly smaller
 .post-content p, .post-content li {
-  font-size: 10px;
+  font-size: 14px;
   color: #515151;
+}
+
+// make non-headings slightly smaller
+h1, h2, h3, h4 {
+  font-weight: normal !important;
+  margin-bottom:0.5rem !important;  
+  code {
+    font-size: 80%;
+  }
 }
 
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
